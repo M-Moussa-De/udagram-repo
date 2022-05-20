@@ -7,7 +7,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
-      - check
+      - checkout
       - run:
           name: hello
           command: "echo 'Hello World'"
