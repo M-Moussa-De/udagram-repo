@@ -30,9 +30,3 @@ jobs:
       - run:
           name: Deploy App
           command: npm run deploy
-workflows:
-  udagram:
-    jobs:
-      - install
-      - build
-      - deploy
