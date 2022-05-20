@@ -1,0 +1,63 @@
+POSTGRES_HOST=database-2.ckgzhfolakb8.us-east-1.rds.amazonaws.com
+DB_PORT=5432
+PORT=3000
+POSTGRES_PASSWORD=password
+POSTGRES_USERNAME=udagram_rds
+POSTGRES_DB=udagram_rds_db
+RDS_DIALECT=postgres
+AWS_REGION=us-east-1
+AWS_PROFILE=""
+AWS_BUCKET=moussa-bucket-last
+URL=udagram-api-dev-last.eba-kecwbcrp.us-east-1.elasticbeanstalk.com
+AWS_ACCES_KEY_ID=AKIATRX7ALRMTJOJWFBV
+AWS_SECRET_ACCESS_KEY=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
+JWT_SECRET=secret
+
+
+
+
+
+
+import * as dotenv from "dotenv";
+dotenv.config();
+
+// ENV variables
+// - AWS_ACCESS_KEY_ID
+// - AWS_SECRET_ACCESS_KEY
+// Are Also needed
+
+export const config = {
+  username: `${process.env.POSTGRES_USERNAME}`,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
+  dbPort: Number(process.env.DB_PORT),
+  port: Number(process.env.PORT),
+  host: process.env.POSTGRES_HOST,
+  dialect: "postgres",
+  aws_region: process.env.AWS_REGION,
+  aws_profile: process.env.AWS_PROFILE,
+  aws_media_bucket: process.env.AWS_BUCKET,
+  aws_access_key_id: process.env.AWS_ACCESS_KEY_ID,
+  aws_secret_access_key: process.env.AWS_SECRET_ACCESS_KEY,
+  url: process.env.URL,
+  jwt: {
+    secret: process.env.JWT_SECRET,
+  },
+};
+
+
+############################################## IMPORTANNNNNNNNNNNNNNNT ##############################################################
+RDS:   20.05.2022 ab 13:40 Uhr
+    master_username: postgres
+    master_password: passwordmoussa
+    db_name: postgres
+
+
+BUCKET:
+    endpoint: http://moussa-udagram.s3-website-us-east-1.amazonaws.com
+    region: us-east-1
+    bucket_name: moussa-udagram
+
+EB:
+    App_name: udagram-api
+    Env_name: udagram-api-dev        
