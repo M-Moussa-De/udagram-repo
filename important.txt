@@ -60,4 +60,8 @@ BUCKET:
 
 EB:
     App_name: udagram-api
-    Env_name: udagram-api-dev        
+    Env_name: udagram-api-dev
+
+
+Github:
+   repo: https://github.com/M-Moussa-De/udagram-repo.git
