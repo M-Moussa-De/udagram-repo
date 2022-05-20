@@ -1,0 +1,47 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+jobs:
+  build:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - check
+      - run:
+          name: hello
+          command: "echo 'Hello World'"
+# version: 2.1
+# orbs:
+#    node: circleci/node@4.1.0
+#    aws-cli: circle/aws-cli@1.3.1
+# jobs:
+#    build:
+#      docker:
+#         - image: "cimg/base:stable"
+#      steps:
+#         - node/install
+#         - checkout
+#         -run:
+#            name: Install Front-End Dependencies
+#            command:
+#                npm run frontend:install
+#         - run:
+#            name: Build Front-End
+#            command:
+#                npm run frontend:build
+#    deploy:
+#       docker:
+#         - image: "cimg/base:stable"
+#       steps:
+#         - node/install
+#         - run:
+#            name: Deploy App
+#            command:
+#               npm run deploy
+# workflows:
+#   udagram:
+#     jobs:
+#       - build
+#       - deploy
+

@@ -65,3 +65,13 @@ EB:
 
 Github:
    repo: https://github.com/M-Moussa-De/udagram-repo.git
+
+
+INFO:
+  git init
+  git add .
+  git commit -m "Initial commit"
+  git remote add origin repo_url  * git remote remove origin  OR git remote set-url origin git://new.url.here
+  git push -u origin master
+
+
