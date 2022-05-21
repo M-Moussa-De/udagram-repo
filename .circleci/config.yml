@@ -1,13 +1,15 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
-  aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+  # aws-cli version
   aws-cli: circleci/aws-cli@1.3.1
 jobs:
   build:
     docker:
       - image: "cimg/base:stable"
     steps:
+      # to install and build the project
       - node/install
       - checkout
       - run:
@@ -22,11 +24,16 @@ jobs:
       - run:
           name: Back-End Build
           command: npm run backend:build
+      # Set the environment variables into EB
+      # - run:
+      #     name: Sett and send env variables to elastic beanstalk
+      #     command: npm run elasticbeanstalk:deploy
   deploy:
     docker:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      # to deploy the project
       - run:
           name: Deploy App
           command: npm run deploy
